@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            background-image: url('pink 1.jpg');
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff66b2;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff0f5;
+            border: 2px solid #ff99cc;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        h1 {
+            color: #ff3399;
+            margin-top: 60px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .info {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .datetime {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #ff66b2;
+            font-size: 16px;
+            background-color: #fff0f5;
+            border: 2px solid #ff99cc;
+            border-radius: 8px;
+            padding: 5px 10px;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #ff66b2;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 10px;
+        }
+        .audio-player, .movie-player {
+            margin-top: 20px;
+        }
+        .audio-player audio, .movie-player video {
+            width: 100%;
+            border: 2px solid #ff99cc;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+        }
+        .movie-section p {
+            color: #ff3399;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            const datetime = now.toLocaleDateString('en-US', options);
+            document.getElementById('datetime').innerText = datetime;
+        }
+        function goBack() {
+            window.history.back();
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
+</head>
+<body onload="updateDateTime()">
+    <button class="back-button" onclick="goBack()">←</button>
+    <div class="datetime" id="datetime"></div>
+    <h1>About Me</h1>
+    <div class="container">
+        <p>This biodata is about my family and I. I'm the eldest daughter in my family. My zodiac is Taurus and my MBTI is ISTP.</p>
+        <div class="info">
+            <strong>Name:</strong> ZULAIHA BINTI ZULKHAIRE @ FUAD
+        </div>
+        <div class="info">
+            <strong>Age:</strong> 20 y/o
+        </div>
+        <div class="info">
+            <strong>Occupation:</strong> STUDENT
+        </div>
+        <div class="info">
+            <strong>Hobbies:</strong>
+            <ul type="square">
+                <li>Drawing</li>
+                <li>Playing games</li>
+                <li>Listening to music</li>
+                <li>Archery</li>
+                <li>Taekwondo</li>
+            </ul>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/zuly.shy" target="_blank"><b><i>✨Follow me on Instagram✨</i></b></a>
+        </div>
+        <div class="audio-player">
+            <p>🌦️<b><u>Favourite Song</b></u>🌦️</p>
+            <audio controls>
+                <source src="hari mendung.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="movie-player">
+            <p>📽️<b><u>Favourite Video</b></u>📽️</p>
+            <video controls>
+                <source src="video.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <style>
+        body {
+            background-image: url('pink 1.jpg');
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff66b2;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff0f5;
+            border: 2px solid #ff99cc;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        h1 {
+            color: #ff3399;
+            margin-top: 60px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .datetime {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #ff66b2;
+            font-size: 16px;
+            background-color: #fff0f5;
+            border: 2px solid #ff99cc;
+            border-radius: 8px;
+            padding: 5px 10px;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            const datetime = now.toLocaleDateString('en-US', options);
+            document.getElementById('datetime').innerText = datetime;
+        }
+        function goBack() {
+            window.history.back();
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
+</head>
+<body onload="updateDateTime()">
+    <button class="back-button" onclick="goBack()">←</button>
+    <div class="datetime" id="datetime"></div>
+    <h1>Experience</h1>
+    <div class="container">
+        <p>I have working experiences at cafe and internship during my semester break. As for my studies, I'm majoring in Information Management at UiTM Segamat.</p>
+        <p>For my internship experience, I applied at Hospital Segamat. I was assigned in the department of quality management, record center, and library. I learned about how to retrieve and organize records. I also had to receive and send important documents or letters.</p>
+        <p>My working experience during my semester break was at a cafe. They taught me how to greet and treat customers and provide customer service. I learned how to make a variety of drinks, prepare food, and had to memorize the food and drink SOPs. I personally enjoyed making drinks, especially coffee, for customers because it's really fun to use the coffee machine.</p>
+    </div>
+</body>
+</html>

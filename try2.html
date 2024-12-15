@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Biodata</title>
+    <style>
+        body {
+            background-image: url('pink 1.jpg');
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff66b2;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff0f5;
+            border: 2px solid #ff99cc;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto; /* Adjusted margin to position the box closer to the heading */
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        h1 {
+            color: #ff3399;
+            margin-top: 60px; /* Adjusted margin to position the heading higher */
+        }
+        .profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid #ff99cc;
+        }
+        .info {
+            margin: 10px 0;
+        }
+        .dropdown {
+            position: absolute;
+            top: 80px; /* Adjusted to match the height of the first heading */
+            left: 20px;
+        }
+        .dropdown button {
+            background-color: #ff66b2;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff0f5;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #ff66b2;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ff99cc;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .datetime {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #ff66b2;
+            font-size: 16px;
+            background-color: #fff0f5;
+            border: 2px solid #ff99cc;
+            border-radius: 8px;
+            padding: 5px 10px;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'};
+            const datetime = now.toLocaleDateString('en-US', options);
+            document.getElementById('datetime').innerText = datetime;
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
+</head>
+<body onload="updateDateTime()">
+    <div class="datetime" id="datetime"></div>
+    <div class="dropdown" style="top: 80px;">
+        <button>☰ Menu</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="showSection('about')">About Me</a>
+            <a href="#" onclick="showSection('family')">Family</a>
+            <a href="#" onclick="showSection('gallery')">Gallery</a>
+            <a href="#" onclick="showSection('experience')">Experience</a>
+        </div>
+    </div>
+    <h1>ZULAIHA'S BIODATA</h1>
+    <div class="container">
+        <div id="about" class="section active">
+            <h2>About Me</h2>
+            <p>This biodata is about me and my family. I'm a sister and the first child. My zodiac is Taurus and my MBTI is ISTP.</p>
+            <div class="info">
+                <strong>Name:</strong> ZULAIHA BINTI ZULKHAIRE @ FUAD
+            </div>
+            <div class="info">
+                <strong>Age:</strong> 20 y/o
+            </div>
+            <div class="info">
+                <strong>Occupation:</strong> STUDENT
+            </div>
+            <div class="info">
+                <strong>Hobbies:</strong>
+                <ul type="square">
+                    <li>Drawing</li>
+                    <li>Sleeping</li>
+                    <li>Eating</li>
+                    <li>Playing games</li>
+                    <li>Listening to music</li>
+                    <li>Doing some sports</li>
+                </ul>
+            </div>
+        </div>
+        <div id="family" class="section">
+            <h2>Family</h2>
+            <p>My family is living an average life. There are four members in my family: my mom, dad, younger brother, and me. I'm pretty close with my family.</p>
+            <p>First is about my mom. She's a strong, independent, strict, and fierce woman. She's the kind of person who's always on time and doesn't like to wait or make people wait, and she likes to plan everything first.</p>
+            <p>Next is about my dad. He's a chill and independent guy. He's quite fierce and strict too. He's very organized with everything and laid back. He doesn't like to rush things and takes things slow.</p>
+            <p>Lastly is about my younger brother. He's the youngest in my family. The age gap between me and him is 8 years. He likes to cause trouble and always teases me to make me angry. He's a funny, kind, and mischievous boy.</p>
+        </div>
+        <div id="gallery" class="section">
+            <h2>Gallery</h2>
+            <img src="parents.jpg" alt="Mom & Dad" style="width:350px;height:400px;">
+            <img src="brother.jpg" alt="Younger Brother" style="width:300px;height:400px;">
+            <img src="me.jpg" alt="Me" style="width:450px;height:250px;">
+        </div>
+        <div id="experience" class="section">
+            <h2>Experience</h2>
+            <p>I have experience working from my internship and at a cafe during my semester break. As for my studies, I'm majoring in Information Management at UiTM Segamat.</p>
+            <p>For my internship experience, I applied at Hospital Segamat. I was placed in the department of quality management, record center, and library. I learned about how they retrieve and organize records. I also had to receive and send important documents or letters.</p>
+            <p>My working experience during my semester break was at a cafe. They taught me how to greet and treat customers and provide customer service. I learned how to make a variety of drinks, prepare food, and had to memorize the food and drink SOPs. I personally enjoyed making drinks, especially coffee, for customers because it's really fun to use the machine.</p>
+        </div>
+    </div>
+</body>
+</html>
+

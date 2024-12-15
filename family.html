@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family</title>
+    <style>
+        body {
+            background-image: url('pink 1.jpg');
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff66b2;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff0f5;
+            border: 2px solid #ff99cc;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        h1 {
+            color: #ff3399;
+            margin-top: 60px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .datetime {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #ff66b2;
+            font-size: 16px;
+            background-color: #fff0f5;
+            border: 2px solid #ff99cc;
+            border-radius: 8px;
+            padding: 5px 10px;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            const datetime = now.toLocaleDateString('en-US', options);
+            document.getElementById('datetime').innerText = datetime;
+        }
+        function goBack() {
+            window.history.back();
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
+</head>
+<body onload="updateDateTime()">
+    <button class="back-button" onclick="goBack()">←</button>
+    <div class="datetime" id="datetime"></div>
+    <h1>Family</h1>
+    <div class="container">
+        <p>My family is living an average life. There are four members in my family: my mom, dad, younger brother, and me. I'm pretty close with my family.</p>
+        <p>First is about my mom. She's a strong, independent and strict woman. She's the kind of person who's always on time and doesn't like to wait or make people wait, and she likes to plan everything first.</p>
+        <p>Secondly is about my dad. He's a chill and independent guy. He's quite strict too. He's very organized with everything and laid back. He doesn't like to rush things and takes things easy.</p>
+        <p>Lastly is about my younger brother. He's the youngest in my family. The age gap between me and him is 8 years. He likes to cause trouble and always teases me to make me angry. He's a funny, kind, and mischievous boy.</p>
+    </div>
+</body>
+</html>
